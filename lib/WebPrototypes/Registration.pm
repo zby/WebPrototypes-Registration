@@ -93,8 +93,7 @@ sub _send_pass_token {
         ( $env->{SERVER_PORT} && $env->{SERVER_PORT} != 80 ? ':' . $env->{SERVER_PORT} : '' )
     );
     my $reset_url = URI->new( $my_server );
-    $reset_url->path( $env->{SCRIPT_NAME} . '/reset' );
-    $reset_url->query_form( name => $username, pass_token => $pass_token );
+    $reset_url->path( "/ResetPass/reset/$username/$pass_token" );
     $self->send_mail( $self->build_email( $email, $reset_url ) );
 }
 
@@ -104,6 +103,8 @@ sub _send_pass_token {
 __END__
 
 # ABSTRACT: (Experimental) Plack application for registering a new user
+
+THIS IS VERY EXPERIMENTAL NOW
 
 =head1 SYNOPSIS
 

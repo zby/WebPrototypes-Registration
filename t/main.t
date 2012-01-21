@@ -66,6 +66,6 @@ is( $user->{username}, 'new_user', 'User created' );
 is( $user->{email}, 'test@example.com', 'User created' );
 
 is( scalar( $email->header( 'To' ) ), 'test@example.com', 'Confirmation email recepient' );
-like( $email->body, qr/name=new_user&pass_token=/, 'Confirmation email link' );
+like( $email->body, qr{reset/new_user/}, 'Confirmation email link' );
 
 done_testing;
