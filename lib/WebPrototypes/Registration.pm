@@ -172,7 +172,11 @@ These methods have defaults - but should probably be overriden anyway.
 Should return the html page containing the passed text fragment.  By default it just adds
 the html and body tags.
 
-=item build_mail ( to_address, link_to_the_reset_page )
+=item build_reply ( page_body )
+
+Should return the PSGI response data structure.
+
+=item build_email ( to_address, link_to_the_reset_page )
 
 Should create the email containing the link.
 
