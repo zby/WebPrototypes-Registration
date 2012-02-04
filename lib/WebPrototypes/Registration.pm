@@ -1,6 +1,8 @@
 use strict;
 use warnings;
 
+use 5.0100;
+
 package WebPrototypes::Registration;
 use parent qw(Plack::Component);
 use Plack::Request;
